@@ -22,5 +22,7 @@ Restart NetworkManager
 sudo systemctl restart NetworkManager
 
 next if you need to add one or more upstream dns servers run this command
+
 use the bellow command and editto suit your needs. in my case I have two piholes so you will need to do "pihole1ip:pihole2ip"
+
 docker run --name lancache-dns -p insertlocalhip:53:53/udp -e USE_GENERIC_CACHE=true -e LANCACHE_IP=insertlocalip -e UPSTREAM_DNS= "192.168.2.25(pihole1);192.168.2.30(pihole2)"  lancachenet/lancache-dns:latest
